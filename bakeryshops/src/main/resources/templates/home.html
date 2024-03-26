@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+ <!--Link To CSS-->
+    <link rel="stylesheet" th:href="@{../css/style.css}"/>
+    <!-- box Icon link-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    
+</head>
+<body>
+
+
+ <!--Header-->
+    <header>
+        <a href="#"  class="logo"><img th:src="@{../img/logo.png}"></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#ride">Shop</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <div class="header-btn">
+            <a href="#" class="sign-up">Sign Up</a>
+            <a href="#" class="sign-in">Sign IN</a>
+            </div>
+        </header>
+
+        <!--Home-->
+        <section class="home" id="home" style="background-image: url(/img/banner2.jpg);">
+            <div class="text">
+                <h1><span>Delicious</span> Cake <br>for everyone</h1>
+                <p>Baking Your Day Better.</p>
+                <p>Baking Happiness for You.</p>
+                <div class="app-stores">
+                    <img th:src="@{../img/ios.png}" alt="">
+                    <img th:src="@{../img/512x512.png}" alt="">
+                </div>
+            </div>
+            </section>
+
+
+			<!-- Shop -->
+			
+		<!--Ride-->
+            <section class="ride" id="ride">
+                <div class="heading">
+                    <span>Made with love</span>
+                    <h1>Best Cake products</h1>
+                    </div>
+                    <div class="ride-container">
+                        <div class="box">
+                        	<img th:src="@{../img/blog-img3.png}" alt="">
+                            <p> Choclate cake</p>
+                        </div>
+                        <div class="box">
+                            <img th:src="@{../img/blog-img2.png}" alt="">
+                            <p>fruit cake </p>
+                        </div>
+
+                
+                    </div>
+                </section>
+    
+                <!--services-->
+                <section class="services" id="services">
+                    <div class="heading">
+                        <span>Best Services</span>
+                        <h1>Explore Out Top Deals <br> From Top Rated Dealaers</h1>
+                        </div>
+                        <div class="services-container">
+                            <div class="box" th:each="product :${products}">
+                                    <div class="box-img">
+                                        <img th:src="${product.imageUrl}" alt="">
+                                    </div>
+                                    <p th:text="${product.description}"></p>
+                                    <h3 th:text="${product.manufacturer}">2018 Hondass Civic</h3>
+                                    <h2 th:text="${product.price}">$58500 | $358 <span>/month</span></h2>
+                                    <a href="/rides/addride" class="btn">Buy</a>
+                            </div>
+
+                            <div class="box">
+                                <div class="box-img">
+                                    <img th:src="@{../img/cake1.jpg}" alt="">
+                                </div>
+                                <p>2017</p>
+                                <h3>2018 Honda Civic</h3>
+                                <h2>$58500 | $358 <span>/month</span></h2>
+                                <a href="/rides/addride" class="btn">Buy</a>
+                        </div>
+
+                        <div class="box">
+                            <div class="box-img">
+                                <img th:src="@{../img/cake2.jpg}" alt="">
+                            </div>
+                            <p>2017</p>
+                            <h3>2018 Honda Civic</h3>
+                            <h2>$58500 | $358 <span>/month</span></h2>
+                            <a href="/rides/addride" class="btn">Buy</a>
+                    </div>
+
+                    <div class="box">
+                        <div class="box-img">
+                            <img th:src="@{../img/cake3.jpg}" alt="">
+                        </div>
+                        <p>2017</p>
+                        <h3>2018 Honda Civic</h3>
+                        <h2>$58500 | $358 <span>/month</span></h2>
+                        <a href="/rides/addride" class="btn">Buy</a>
+                </div>
+
+                <div class="box">
+                    <div class="box-img">
+                        <img th:src="@{../img/cake4.jpg}" alt="">
+                    </div>
+                    <p>2017</p>
+                    <h3>2018 Honda Civic</h3>
+                    <h2>$58500 | $358 <span>/month</span></h2>
+                    <a href="/rides/addride" class="btn">Buy</a>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img th:src="@{../img/cake5.jpg}" alt="">
+                </div>
+                <p>2017</p>
+                <h3>2018 Honda Civic</h3>
+                <h2>$58500 | $358 <span>/month</span></h2>
+                <a href="/rides/addride" class="btn">Buy</a>
+        </div>
+        </div>
+                </section>
+
+                <!--about-->
+        <section class="about" id="about">
+            <div class="heading">
+                <span>About US</span>
+                <h1>Best Customer Experience</h1>
+            </div>
+            <div class="about-container">
+                <div class="about-img">
+                    <img th:src="@{../img/about.jpg}" alt="">
+                </div>
+                <div class="about-text">
+                    <span>About Us</span>
+                    <p>Bakery Management System is totally computer based software application to maintain day to day transactions in a bakery. This software helps to store all bakery items with category and sub-category. It also maintains record of purchase and sales. It maintains details of Supplier. This application generates reports of purchase, sales and stock.</p>
+                    <p>Besides, maintaining consistency is also one of the key things to take care of. The recipe management feature of a bakery POS keeps track of the consumed ingredients in preparing any item, thereby maintaining the same taste and consistency in all the items. Furthermore, since this feature guides you to follow a standard recipe, it also helps keep the food costs in check</p>
+                  <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+        
+    
+         
+        
+        
+        
+        
+        
+        
+        
+
+        <!--Reviews-->
+        <section class="Reviews" id="Reviews">
+        <div class="heading">
+            <span>Reviews</span>
+            <h1>Whats Out Customer Say</h1>
+        </div>    
+        <div class="reviews-container">
+            <div class="box">
+                <div class="rev-img">
+                    <img th:src="@{../img/cake6.jpg}" alt="">
+                </div>
+                <h2>Aditya Kale</h2>
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ipsum, inventore sapiente debitis laudantium illum doloribus, earum nulla autem, sed eius! Totam mollitia ducimus pariatur voluptatem inventore soluta voluptas veritatis?</p>
+            </div>
+            <div class="box">
+                <div class="rev-img">
+                    <img th:src="@{../img/rev2.jpg}" alt="">
+                </div>
+                <h2>Someone Name</h2>
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+
+                </div>
+               <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla accusantium est cum eaque et beatae, dignissimos debitis molestias aliquid nisi similique autem, impedit voluptatem minus voluptas ad, dolorem maiores fuga!</p>
+            </div>
+            <div class="box">
+                <div class="rev-img">
+                    <img th:src="@{../img/rev3.jpg}" alt="">
+                </div>
+                <h2>Someone Name</h2>
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, itaque nisi! Eaque ullam, voluptate doloremque omnis at vel commodi. Reprehenderit accusantium excepturi magnam rerum porro? Aspernatur animi tenetur autem ipsum.</p>
+            </div>
+        </div>
+        </section>
+
+        <!--NwsLetter-->
+        <section class="newletter">
+            <h2>subcribe to newsletter</h2>
+            <div class="box">
+                <input type="text" placeholder="Enter your Email...">
+                <a href="#" class="btn">Subscribe</a>
+            </div>
+        </section>
+
+
+  
+    <div th:each="product :${products}">
+        <div >
+            <img th:src="${product.imageUrl}" alt="">
+        </div>
+        <p th:text="${product.description}"></p>
+        <h3 th:text="${product.manufacturer}"></h3>
+        <h2 th:text="${product.price}"></h2>
+        <a href="/users/ride">Rent Now</a>
+    </div>
+
+
+</body>
+</html>

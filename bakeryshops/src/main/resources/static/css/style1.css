@@ -1,0 +1,209 @@
+* {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+
+
+
+:root {
+	 --main-color: #8080ff;
+    --secand-color: #0080c0;
+    --text-color: #444;
+     --gradient: linear-gradient(6f7bf7,9bf8f4);
+
+ 
+    
+    
+    
+}
+
+/* Custom Scroll Bar */
+html::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+
+section {
+    padding: 50px 100px;
+}
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #eeeff1;
+    padding: 15px 100px;
+}
+
+.logo img {
+    width: 40px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.navbar a::after {
+    content: ' ';
+    width: 0;
+    height: 3px;
+    background: var(--gradient);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.5s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+#menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+.header-btn a {
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.header-btn .sign-up {
+    background: #474fa0;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+.header-btn .sign-up:hover {
+    background: var(--main-color);
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; 
+  	background-image: url(../img/carhomepage.png);
+  	min-height: 100vh;
+}
+
+
+.container {
+    border: 1px solid;
+    margin: 70px 0 0 200px;
+    width: 25%;
+    padding: 30px;
+    background: var(--gradient);
+    color: #fff;
+    border-radius: 10%;
+    box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.container .sign-in {
+    background: #474fa0;
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 15px;
+    width: 50%;
+    margin-left: 0; /* Align button to the left */
+}
+
+.container .sign-in:hover {
+    background: var(--main-color);
+}
+
+.container label {
+    font-size: large;
+}
+
+.container input {
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    font-size: larger;
+    color:black;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1200px) {
+    .container {
+        width: 30%;
+        margin: 100px auto;
+        padding: 40px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .container {
+        width: 40%;
+        margin: 100px auto;
+        padding: 40px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 50%;
+        margin: 100px auto;
+        padding: 40px;
+    }
+    .header-btn a {
+        margin-left: -16px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        width: 70%;
+        margin: 100px auto;
+        padding: 20px;
+    }
+
+    .container .sign-in {
+        padding: 10px;
+    }
+
+    .container input {
+        padding: 8px;
+        margin-top: 15px;
+    }
+}

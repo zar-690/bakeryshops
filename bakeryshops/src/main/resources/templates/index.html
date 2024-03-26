@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #8080ff;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin: 20px auto;
+        width: 80%;
+    }
+
+    th, td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+        font-size: 16px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .product-image {
+        max-width: 100px;
+        max-height: 100px;
+    }
+</style>
+</head>
+<body>
+  
+        <div class="services-container">
+    <div class="box" th:each="product :${products}">
+        <div class="box-img">
+           <span><img th:src="${product.imageUrl}" alt=""></span>
+        </div>
+        <p th:text="${product.description}"></p>
+        <h3 th:text="${product.manufacturer}"></h3>
+        <h2 th:text="${product.price}"></h2>
+        <a href="/users/addride" class="btn">Rent Now</a>
+    </div>
+</div>
+ </section>
+    
+    
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+        overflow: hidden;
+    }
+
+	img{
+    width: 40px;
+    margin:5px;
+	}
+	
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #45a049;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin: 20px auto;
+    }
+
+    th, td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        text-align: left;
+        background-color: #f2f2f2;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 8px;
+        margin: 4px 0;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<ul>
+ <li> <img th:src="@{../img/logo.png}"></li>
+ <li><a href="/users/login">Home</a></li>
+
+</ul>
+
+<h1>Cake Informations</h1>
+<table border="1" align="center">
+    <form method="post" th:action="@{/rides/addride}" th:object="${ride}">
+    
+      <tr>
+            <td>cake name</td>
+            <th><input type="text"  th:field="*{productname}"></th>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <th><input type="text"  th:field="*{firstname}"></th>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <th><input type="text"  th:field="*{lastname}"></th>
+        </tr>
+        <tr>
+            <td>Mobile Number</td>
+            <th><input type="number"  th:field="*{mobile}"></th>
+        </tr>
+     	 <tr>
+            <td>Delivary Location</td>
+            <th><input type="text"  th:field="*{pickup}"></th>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <th><input type="text"  th:field="*{lastpoint}"></th>
+        </tr>
+       
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit"></td>
+        </tr>
+    </form>
+</table>
+
+</body>
+</html>

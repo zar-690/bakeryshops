@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+
+     li a:hover {
+        background-color: #8080ff;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin: 20px auto;
+    }
+
+    th, td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        text-align: left;
+        background-color: #f2f2f2;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 8px;
+        margin: 4px 0;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<ul>
+ <li><a href="/users/login">Home</a></li>
+        <li><a href="/products/addproduct">Add Product</a></li>
+        <li><a href="/products/show">Show Products</a></li>
+        <li><a href="/rides/usershow">User Information</a></li>
+</ul>
+
+<h1>Add Product</h1>
+<table border="1" align="center">
+    <form method="post" th:action="@{/products/addproduct}" th:object="${product}">
+        <tr>
+            <td>Name</td>
+            <th><input type="text" name="productName" th:field="*{productName}"></th>
+        </tr>
+        <tr>
+            <td>Manufacturer</td>
+            <th><input type="text" name="manufacturer" th:field="*{manufacturer}"></th>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <th><input type="number" name="price" th:field="*{price}"></th>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <th><input type="text" name="description" th:field="*{description}"></th>
+        </tr>
+        <tr>
+            <td>Image URL</td>
+            <th><input type="text" name="imageUrl" th:field="*{imageUrl}"></th>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit"></td>
+        </tr>
+    </form>
+</table>
+
+</body>
+</html>
